@@ -1,0 +1,19 @@
+# Gradle / Fabric Loom
+.gradle/
+build/
+out/
+run/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Local mod test worlds / captures
+screenshots/
+crash-reports/
+logs/
+
+# Python-generated caches
+__pycache__/
+*.py[cod]

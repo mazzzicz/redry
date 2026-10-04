@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " R ",
+    "PAP",
+    " C "
+  ],
+  "key": {
+    "R": "minecraft:redstone",
+    "P": "minecraft:paper",
+    "A": "minecraft:amethyst_shard",
+    "C": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "redry:field_tape"
+  },
+  "show_notification": true
+}

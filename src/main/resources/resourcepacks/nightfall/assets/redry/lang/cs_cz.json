@@ -1,0 +1,17 @@
+{
+  "entity.redry.herobrine": "Herobrine — Pozorovatel",
+  "entity.redry.still_one": "RED-173 — Zastavený",
+  "entity.redry.chat_echo": "RED-404 — Chat bez diváků",
+  "item.redry.field_tape": "Ztracená kazeta Redryho",
+  "item.redry.signal_receiver": "Archivní přijímač RX-04",
+  "subtitles.redry.whisper": "Šepot z černé frekvence",
+  "subtitles.redry.signal": "Přerušovaný signál",
+  "subtitles.redry.heartbeat": "Tlukot za tebou",
+  "subtitles.redry.tape_play": "Starý magnetofon se rozběhl",
+  "subtitles.redry.static": "Digitální výpadek",
+  "subtitles.redry.distant_knock": "Zaklepání z prázdné chodby",
+  "subtitles.redry.breath": "Někdo dýchá těsně za tebou",
+  "item.redry.field_tape.description": "Pravým kliknutím přehraješ fragment archivu REDRY.",
+  "item.redry.signal_receiver.description": "Pravým kliknutím změříš přibližný směr anomálie. V ruce tlumí úzkost.",
+  "message.redry.receiver.empty": "[RX-04] Žádný čitelný signál. Zkus znovu po setmění."
+}

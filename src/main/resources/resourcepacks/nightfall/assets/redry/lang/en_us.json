@@ -1,0 +1,17 @@
+{
+  "entity.redry.herobrine": "Herobrine — The Watcher",
+  "entity.redry.still_one": "RED-173 — The Still One",
+  "entity.redry.chat_echo": "RED-404 — No Viewers in Chat",
+  "item.redry.field_tape": "Redry's Lost Tape",
+  "item.redry.signal_receiver": "Archive Receiver RX-04",
+  "subtitles.redry.whisper": "A whisper on the dead frequency",
+  "subtitles.redry.signal": "A broken signal",
+  "subtitles.redry.heartbeat": "A heartbeat behind you",
+  "subtitles.redry.tape_play": "An old recorder starts",
+  "subtitles.redry.static": "A digital dropout",
+  "subtitles.redry.distant_knock": "A knock from an empty hallway",
+  "subtitles.redry.breath": "Someone breathes at your back",
+  "item.redry.field_tape.description": "Right-click to play a fragment from the REDRY archive.",
+  "item.redry.signal_receiver.description": "Right-click for an approximate anomaly bearing. Holding it eases dread.",
+  "message.redry.receiver.empty": "[RX-04] No readable signal. Try again after nightfall."
+}

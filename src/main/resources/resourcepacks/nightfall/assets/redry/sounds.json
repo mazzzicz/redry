@@ -1,0 +1,53 @@
+{
+  "whisper": {
+    "subtitle": "subtitles.redry.whisper",
+    "sounds": [
+      { "name": "minecraft:ambient/cave/cave1", "volume": 0.62, "pitch": 0.68 },
+      { "name": "minecraft:entity/enderman/stare", "volume": 0.38, "pitch": 0.58 },
+      { "name": "minecraft:ambient/cave/cave2", "volume": 0.56, "pitch": 0.82 }
+    ]
+  },
+  "signal": {
+    "subtitle": "subtitles.redry.signal",
+    "sounds": [
+      { "name": "minecraft:block/sculk_sensor/clicking", "volume": 0.7, "pitch": 0.55 },
+      { "name": "minecraft:entity/enderman/teleport", "volume": 0.45, "pitch": 0.72 }
+    ]
+  },
+  "heartbeat": {
+    "subtitle": "subtitles.redry.heartbeat",
+    "sounds": [
+      { "name": "minecraft:entity/warden/heartbeat", "volume": 0.8, "pitch": 0.7 }
+    ]
+  },
+  "tape_play": {
+    "subtitle": "subtitles.redry.tape_play",
+    "sounds": [
+      { "name": "minecraft:block/iron_trapdoor/open", "volume": 0.55, "pitch": 0.62 },
+      { "name": "minecraft:block/amethyst_block/chime", "volume": 0.28, "pitch": 0.48 }
+    ]
+  },
+  "static": {
+    "subtitle": "subtitles.redry.static",
+    "sounds": [
+      { "name": "minecraft:entity/enderman/teleport", "volume": 0.6, "pitch": 0.45 },
+      { "name": "minecraft:block/sculk_sensor/clicking", "volume": 0.8, "pitch": 0.38 },
+      { "name": "minecraft:entity/warden/sonic_boom", "volume": 0.18, "pitch": 1.35 }
+    ]
+  },
+  "distant_knock": {
+    "subtitle": "subtitles.redry.distant_knock",
+    "sounds": [
+      { "name": "minecraft:block/wooden_door/close", "volume": 0.7, "pitch": 0.62 },
+      { "name": "minecraft:block/iron_trapdoor/close", "volume": 0.36, "pitch": 0.52 },
+      { "name": "minecraft:block/wood/step", "volume": 0.4, "pitch": 0.48 }
+    ]
+  },
+  "breath": {
+    "subtitle": "subtitles.redry.breath",
+    "sounds": [
+      { "name": "minecraft:entity/warden/heartbeat", "volume": 0.35, "pitch": 0.36 },
+      { "name": "minecraft:ambient/cave/cave3", "volume": 0.2, "pitch": 0.56 }
+    ]
+  }
+}

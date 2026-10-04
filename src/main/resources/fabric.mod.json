@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "redry",
+  "version": "${version}",
+  "name": "REDRY: Noční archiv — Signál 26.3",
+  "description": "Český survival horor pro Minecraft 26.3. Strach si pamatuje, co hráč zahlédl. Ve dne sbírej důkazy; po setmění nevěř tichu, chatu ani vlastnímu zraku.",
+  "authors": [
+    "Redry community"
+  ],
+  "license": "MIT",
+  "icon": "assets/redry/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "cz.redry.nightfall.RedryMod"
+    ],
+    "client": [
+      "cz.redry.nightfall.client.RedryClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": ">=0.161.0",
+    "minecraft": "~26.3",
+    "java": ">=25"
+  }
+}

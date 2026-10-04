@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " C ",
+    "RAR",
+    " I "
+  ],
+  "key": {
+    "C": "minecraft:compass",
+    "R": "minecraft:redstone",
+    "A": "minecraft:amethyst_shard",
+    "I": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "redry:signal_receiver"
+  },
+  "show_notification": true
+}
