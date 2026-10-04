@@ -28,7 +28,7 @@ public final class RedryHudOverlay {
 
     private static void render(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker) {
         Minecraft client = Minecraft.getInstance();
-        if (client.player == null || client.level == null || client.screen != null) {
+        if (client.player == null || client.level == null || client.gui.screen() != null) {
             dread = Math.max(0.0F, dread - 0.04F);
             return;
         }

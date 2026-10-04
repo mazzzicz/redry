@@ -6,13 +6,13 @@ import cz.redry.nightfall.client.render.AnomalyRenderer;
 import cz.redry.nightfall.client.render.RedryHudOverlay;
 import cz.redry.nightfall.entity.RedryEntities;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.model.geom.ModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 
 public final class RedryClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        ModelLayerRegistry.registerModelLayer(AnomalyModel.LAYER, AnomalyModel::createLayer);
+        EntityModelLayerRegistry.registerModelLayer(AnomalyModel.LAYER, AnomalyModel::createLayer);
 
         EntityRenderers.register(RedryEntities.HEROBRINE, context -> new AnomalyRenderer<>(
                 context, RedryMod.id("textures/entity/herobrine.png"), false, false, 0.34F));
