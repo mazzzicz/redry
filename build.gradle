@@ -48,10 +48,12 @@ java {
     withSourcesJar()
 }
 
+def modArchivesName = project.archives_base_name.toString()
+
 jar {
-    inputs.property "archivesName", project.archives_base_name
+    inputs.property "archivesName", modArchivesName
     from("LICENSE") {
-        rename { "${it}_${project.archives_base_name}" }
+        rename { "${it}_${modArchivesName}" }
     }
 }
 
