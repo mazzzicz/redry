@@ -38,7 +38,7 @@ public final class StillOneEntity extends RedryAnomalyEntity {
     @Override
     public void tick() {
         super.tick();
-        if (this.level().isClientSide || !this.isAlive() || !(this.level() instanceof ServerLevel serverLevel)) {
+        if (this.level().isClientSide() || !this.isAlive() || !(this.level() instanceof ServerLevel serverLevel)) {
             return;
         }
 

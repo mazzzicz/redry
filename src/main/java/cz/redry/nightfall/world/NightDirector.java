@@ -11,7 +11,7 @@ import cz.redry.nightfall.item.RedryItems;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.LightLayer;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -148,7 +148,7 @@ public final class NightDirector {
                 SoundSource.AMBIENT, 0.40F + state.fear / 240.0F, pitch);
 
         if (level.getRandom().nextFloat() < 0.18F + state.fear / 180.0F) {
-            player.displayClientMessage(Component.literal(lines[level.getRandom().nextInt(lines.length)]), true);
+            player.sendSystemMessage(Component.literal(lines[level.getRandom().nextInt(lines.length)]), true);
         }
         if (state.fear > 52 && level.getRandom().nextFloat() < 0.22F) {
             level.playSound(null, player.blockPosition().relative(player.getDirection().getOpposite(), 7),
@@ -164,7 +164,7 @@ public final class NightDirector {
                     net.minecraft.world.effect.MobEffects.DARKNESS, 30, 0, true, false, false));
             level.playSound(null, player.blockPosition(), RedrySounds.HEARTBEAT,
                     SoundSource.AMBIENT, 0.66F + state.fear / 300.0F, 0.58F);
-            player.displayClientMessage(Component.literal("§4ZÁZNAM PŘESKOČIL."), true);
+            player.sendSystemMessage(Component.literal("§4ZÁZNAM PŘESKOČIL."), true);
             state.nextShock = now + 1_100L + level.getRandom().nextInt(1_300);
         }
 
@@ -173,7 +173,7 @@ public final class NightDirector {
                     net.minecraft.world.effect.MobEffects.BLINDNESS, 14, 0, true, false, false));
             level.playSound(null, player.blockPosition(), RedrySounds.STATIC,
                     SoundSource.AMBIENT, 0.78F, 0.54F);
-            player.displayClientMessage(Component.literal("§5[ARCHIV] §k████████ §r§5záznam pokračuje"), true);
+            player.sendSystemMessage(Component.literal("§5[ARCHIV] §k████████ §r§5záznam pokračuje"), true);
             state.nextGlitch = now + 1_900L + level.getRandom().nextInt(1_800);
         }
     }
@@ -199,20 +199,20 @@ public final class NightDirector {
         RedryAnomalyEntity anomaly;
         if (nightNumber >= 4L && state.fear >= 34 && level.getRandom().nextFloat() < 0.34F) {
             anomaly = new SignalEchoEntity(RedryEntities.CHAT_ECHO, level);
-            player.displayClientMessage(Component.literal("§5[CHAT] §dneznámý divák vstoupil do světa"), true);
+            player.sendSystemMessage(Component.literal("§5[CHAT] §dneznámý divák vstoupil do světa"), true);
             level.playSound(null, player.blockPosition(), RedrySounds.STATIC,
                     SoundSource.AMBIENT, 0.72F, 0.64F);
         } else if (nightNumber >= 2L && player.blockPosition().getY() < 58
                 && state.fear >= 20 && level.getRandom().nextFloat() < 0.44F) {
             anomaly = new StillOneEntity(RedryEntities.STILL_ONE, level);
-            player.displayClientMessage(Component.literal("§8Někdo za tebou má stejný počet kloubů."), true);
+            player.sendSystemMessage(Component.literal("§8Někdo za tebou má stejný počet kloubů."), true);
             level.playSound(null, player.blockPosition(), RedrySounds.SIGNAL,
                     SoundSource.AMBIENT, 0.78F, 0.58F);
         } else {
             HerobrineEntity herobrine = new HerobrineEntity(RedryEntities.HEROBRINE, level);
             herobrine.beginDistantAppearance(64);
             anomaly = herobrine;
-            player.displayClientMessage(Component.literal("§7Na okraji světla stojí někdo, kdo tu nemá být."), true);
+            player.sendSystemMessage(Component.literal("§7Na okraji světla stojí někdo, kdo tu nemá být."), true);
             level.playSound(null, player.blockPosition(), RedrySounds.WHISPER,
                     SoundSource.AMBIENT, 0.76F, 0.62F);
         }

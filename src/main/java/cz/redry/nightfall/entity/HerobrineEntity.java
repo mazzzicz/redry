@@ -42,7 +42,7 @@ public final class HerobrineEntity extends RedryAnomalyEntity {
     @Override
     public void tick() {
         super.tick();
-        if (this.level().isClientSide || !this.isAlive()) {
+        if (this.level().isClientSide() || !this.isAlive()) {
             return;
         }
 

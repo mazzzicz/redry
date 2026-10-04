@@ -46,7 +46,7 @@ public final class SignalEchoEntity extends RedryAnomalyEntity {
     @Override
     public void tick() {
         super.tick();
-        if (this.level().isClientSide || !this.isAlive() || !(this.level() instanceof ServerLevel serverLevel)) {
+        if (this.level().isClientSide() || !this.isAlive() || !(this.level() instanceof ServerLevel serverLevel)) {
             return;
         }
 
@@ -70,7 +70,7 @@ public final class SignalEchoEntity extends RedryAnomalyEntity {
                 && player.hasLineOfSight(this)
                 && isLookingAt(player);
         if (distanceSquared < 7.0D * 7.0D || (noticed && distanceSquared < 34.0D * 34.0D)) {
-            player.displayClientMessage(Component.literal(
+            player.sendSystemMessage(Component.literal(
                     GLITCH_LINES[serverLevel.getRandom().nextInt(GLITCH_LINES.length)]
             ), true);
             player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 28, 0, true, false, true));

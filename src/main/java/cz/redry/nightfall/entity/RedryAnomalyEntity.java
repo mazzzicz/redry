@@ -44,7 +44,7 @@ public abstract class RedryAnomalyEntity extends Monster {
     @Override
     public void tick() {
         super.tick();
-        if (this.level().isClientSide) {
+        if (this.level().isClientSide()) {
             return;
         }
 

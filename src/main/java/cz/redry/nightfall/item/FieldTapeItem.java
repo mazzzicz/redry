@@ -7,10 +7,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public final class FieldTapeItem extends Item {
@@ -26,11 +25,10 @@ public final class FieldTapeItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
-        if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+        if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
             String fragment = FRAGMENTS[level.getRandom().nextInt(FRAGMENTS.length)];
-            player.displayClientMessage(Component.literal(fragment), false);
+            serverPlayer.sendSystemMessage(Component.literal(fragment), false);
             level.playSound(null, player.blockPosition(), RedrySounds.TAPE_PLAY,
                     SoundSource.PLAYERS, 0.85F, 0.88F + level.getRandom().nextFloat() * 0.12F);
             NightDirector.relieveFear(serverPlayer, 12);
@@ -41,6 +39,6 @@ public final class FieldTapeItem extends Item {
                         RedrySounds.BREATH, SoundSource.AMBIENT, 0.54F, 0.62F);
             }
         }
-        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 }
