@@ -41,7 +41,7 @@ public final class NightDirector {
         if (level.dimension() != Level.OVERWORLD) {
             return false;
         }
-        long time = Math.floorMod(level.getDayTime(), 24_000L);
+        long time = Math.floorMod(level.getOverworldClockTime(), 24_000L);
         return time >= 13_000L && time <= 23_000L;
     }
 
@@ -63,7 +63,7 @@ public final class NightDirector {
         }
 
         long now = level.getGameTime();
-        long nightNumber = Math.max(1L, Math.floorDiv(level.getDayTime(), 24_000L) + 1L);
+        long nightNumber = Math.max(1L, Math.floorDiv(level.getOverworldClockTime(), 24_000L) + 1L);
         boolean night = isNight(level);
         boolean peaceful = level.getDifficulty() == Difficulty.PEACEFUL;
 
@@ -220,7 +220,7 @@ public final class NightDirector {
         double dxToPlayer = player.getX() - (spawnPos.getX() + 0.5D);
         double dzToPlayer = player.getZ() - (spawnPos.getZ() + 0.5D);
         float yaw = (float) (Math.atan2(dzToPlayer, dxToPlayer) * 180.0D / Math.PI) - 90.0F;
-        anomaly.moveTo(spawnPos.getX() + 0.5D, spawnPos.getY(), spawnPos.getZ() + 0.5D, yaw, 0.0F);
+        anomaly.snapTo(spawnPos.getX() + 0.5D, spawnPos.getY(), spawnPos.getZ() + 0.5D, yaw, 0.0F);
         if (!level.addFreshEntity(anomaly)) {
             anomaly.discard();
             state.nextEncounter = now + 400L;
@@ -230,7 +230,7 @@ public final class NightDirector {
         long calmWindow = Math.max(2_800L, 5_500L - Math.min(nightNumber, 12L) * 210L);
         state.nextEncounter = now + calmWindow + level.getRandom().nextInt(1_800);
         RedryMod.LOGGER.debug("Noční archivní setkání poblíž {} (noc {}, strach {}).",
-                player.getGameProfile().getName(), nightNumber, state.fear);
+                player.getName().getString(), nightNumber, state.fear);
     }
 
     private static BlockPos findDistantPosition(ServerLevel level, Player player) {

@@ -29,6 +29,7 @@ public final class RedryItems {
             new SignalReceiverItem(new Item.Properties()
                     .stacksTo(1)
                     .rarity(Rarity.RARE)
+                    .useCooldown(1.75F)
                     .setId(SIGNAL_RECEIVER_KEY))
     );
 

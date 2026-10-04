@@ -53,7 +53,6 @@ public final class SignalReceiverItem extends Item {
 
             serverLevel.playSound(null, player.blockPosition(), RedrySounds.SIGNAL,
                     SoundSource.PLAYERS, 0.72F, 0.64F + serverLevel.getRandom().nextFloat() * 0.16F);
-            player.getCooldowns().addCooldown(this, 35);
         }
         return InteractionResult.SUCCESS;
     }

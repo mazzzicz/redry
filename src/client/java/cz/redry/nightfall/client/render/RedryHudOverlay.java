@@ -37,7 +37,7 @@ public final class RedryHudOverlay {
         long elapsed = lastFrameMillis == 0L ? 16L : Math.max(0L, Math.min(100L, now - lastFrameMillis));
         lastFrameMillis = now;
 
-        long dayTime = Math.floorMod(client.level.getDayTime(), 24_000L);
+        long dayTime = Math.floorMod(client.level.getOverworldClockTime(), 24_000L);
         boolean night = client.level.dimension() == Level.OVERWORLD && dayTime >= 13_000L && dayTime <= 23_000L;
         float target = night ? 0.11F : 0.0F;
         if (client.player.hasEffect(MobEffects.DARKNESS)) {
