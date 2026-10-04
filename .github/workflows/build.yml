@@ -48,6 +48,20 @@ jobs:
             } >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Expose Gradle failure details in check annotations
+        if: failure()
+        shell: bash
+        run: |
+          if [[ -f gradle-build.log ]]; then
+            mapfile -t lines < <(grep -E 'error:|symbol:|location:|no suitable method|cannot find symbol|What went wrong:|Execution failed for task|Caused by:|Could not .*|FAILURE:|BUILD FAILED|FAILED' gradle-build.log | tail -n 40)
+            if (( ${#lines[@]} == 0 )); then
+              mapfile -t lines < <(tail -n 40 gradle-build.log)
+            fi
+            for line in "${lines[@]}"; do
+              echo "::error title=Gradle diagnostics::$line"
+            done
+          fi
+
       - name: Preserve Gradle diagnostics on failure
         if: failure()
         uses: actions/upload-artifact@v4
